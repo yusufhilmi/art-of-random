@@ -13,10 +13,8 @@ var frame_pos = getFrame();
 
 
 var dot = d3.select("#dot");
-dot.attr("width", 20);
+dot.attr("width", 20); // WIDTH OF DOT
 dot.attr("style", `top: ${randomize(frame_pos.top, frame_pos.bottom)}; left: ${randomize(frame_pos.right, frame_pos.left)}`);
-dot.attr("transform", `rotate(45)`);
-
 
 for (var i = 2; i < 19; i++) {
     let thing = d3.select(`#thing${i}`);
@@ -29,13 +27,11 @@ for (var i = 2; i < 19; i++) {
     thing.attr("width", width);
     thing.attr("height", height);
 
-    // RANDOM LOCATION
+    // RANDOM LOCATION !don't change if you know what you're doing
     thing.attr("style", `top: ${randomize(frame_pos.top, frame_pos.bottom - height)}; left: ${randomize(frame_pos.left, frame_pos.right - width)}`);
+    thing.attr("transform", ` rotate(${rotation})`);
 
-    // RANDOM ROTATION
-    thing.attr("transform", ` rotate(${randomize(0, 360)})`);
 
-    
     loopoverloop = randomize(0, 2);   // RANDOM NUMBER OF OTHER ELEMENTS !there is already one created before!
     for (var j = 0; j < loopoverloop; j++) {
         svgwidth = randomize(50, frame_pos.width / 4);  // RANDOM WIDTH PARAMETERS FOR ALL
