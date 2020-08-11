@@ -40,7 +40,7 @@ var chosenBigs = [];
 for (let i = 0; i < NUMBEROFBIGS; i++) {
     let randomized_index = randomize(0, bigs.length);
     console.log(randomized_index);
-    chosenBigs.push(randomized_index);
+    chosenBigs.push(bigs[randomized_index]);
 }
 
 console.log(chosenBigs);
