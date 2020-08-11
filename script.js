@@ -17,7 +17,7 @@ const dotnumbers = randomize(10, 50);  // RANDOM NUMBER OF DOTS
 
 const SMALLELEMENTSRANDOM = 3;   // SMALL ELEMENTS CAN APPEAR +1
 
-
+const TODELETE = [16 ,14];
 ///////////  THIS PARAMETERS SHOULD SUFFICE /////////
 /////////////////////////////////////////////////////
 
@@ -47,6 +47,9 @@ console.log(chosenBigs);
 
 for (var i = 2; i < 17; i++) {
 
+    if ((TODELETE.includes(i))){
+        continue;
+    }
     if ((bigs.includes(i)) && !chosenBigs.includes(i)) {
         console.log(i);
         continue;
